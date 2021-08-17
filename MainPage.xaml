@@ -11,8 +11,23 @@
     <Grid RequestedTheme="Light" Background="#FF3E3B3B" BorderBrush="#FFD1D1D1" FocusVisualSecondaryBrush="#99FFFFFF" FocusVisualPrimaryBrush="White" Width="1096">
 
         <Button Content="Select a game" Margin="0,0,101,32" VerticalAlignment="Bottom" RenderTransformOrigin="-0.601,0.496" Height="64" Width="361" Background="#967bb6" CornerRadius="8,8,8,8" HorizontalAlignment="Right" FontSize="32"/>
-        <ListBox Width="500" HorizontalAlignment="Left" Margin="32,128,32,32" CornerRadius="8,8,8,8"/>
+        <ListBox Width="500" HorizontalAlignment="Left" Margin="32,128,32,32" CornerRadius="8,8,8,8" Opacity="0.75">
+            <ListBoxItem>
+                <TextBox Text="Game" FontSize="24" Width="476" TextAlignment="Center" HorizontalAlignment="Center" Background="Transparent" SelectionHighlightColor="#FF3F3F3F" BorderBrush="#00000000" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBox Text="Game" FontSize="24" Width="476" TextAlignment="Center" HorizontalAlignment="Center" BorderBrush="#00000000" Background="Transparent" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBox Text="Game" FontSize="24" Width="476" TextAlignment="Center" HorizontalAlignment="Center" Background="Transparent" BorderBrush="#00000000" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBox Text="Game" FontSize="24" Width="476" TextAlignment="Center" HorizontalAlignment="Center" Background="Transparent" />
+            </ListBoxItem>
+        </ListBox>
         <TextBox HorizontalAlignment="Left" Margin="565,0,0,0" Text="No game selected yet" TextWrapping="Wrap" VerticalAlignment="Center" Width="500" Height="61" FontSize="32" TextAlignment="Center" Background="#00A24DD3" BorderBrush="#00000000"/>
+        <Button Content="add" Margin="53,915,0,0" VerticalAlignment="Top" Width="161" Background="#FF0FB24A"/>
+        <Button Content="delete" Margin="348,910,0,0" VerticalAlignment="Top" Width="161" Background="#FFD10000"/>
 
 
     </Grid>

@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="GameSelector.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GameSelector"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid RequestedTheme="Light" Background="#FF3E3B3B" BorderBrush="#FFD1D1D1" FocusVisualSecondaryBrush="#99FFFFFF" FocusVisualPrimaryBrush="White">
+        <Button Content="Select a game" Margin="989,673,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.601,0.496" Height="49" Width="320" Background="#967bb6" CornerRadius="8px"/>
+
+        
+    </Grid>
+</Page>

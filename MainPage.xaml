@@ -18,12 +18,14 @@
         <Grid x:Name="BackgroundGrid" />
 
         <!-- Games list -->
-        <ListBox Width="500" HorizontalAlignment="Left" Margin="32,32,0,128" CornerRadius="8,8,8,8" Opacity="0.75">
-            <ListBoxItem>
-                <TextBox Text="Game" FontSize="24" Width="476" TextAlignment="Center" HorizontalAlignment="Center" Background="Transparent" 
-                         SelectionHighlightColor="#FF3F3F3F" BorderBrush="#00000000" CornerRadius="8,8,8,8"/>
-            </ListBoxItem>
-        </ListBox>
+        <Grid x:Name="ListBoxGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Margin="32,32,564,138" Width="500" Height="817">
+            <ListBox HorizontalAlignment="Center" CornerRadius="8,8,8,8" Opacity="0.75" Width="503">
+                <ListBoxItem>
+                    <TextBox Text="Game" FontSize="24" Width="476" TextAlignment="Center" HorizontalAlignment="Center" Background="Transparent" 
+                             SelectionHighlightColor="#FF3F3F3F" BorderBrush="#00000000" CornerRadius="8,8,8,8"/>
+                </ListBoxItem>
+            </ListBox>
+        </Grid>
 
         <!-- Add -->
         <Grid x:Name="AddButtonGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Width="100" Height="80" Margin="282,904,714,21">
@@ -44,7 +46,7 @@
         <Grid x:Name="SelectButtonGrid"  Shadow="{StaticResource GridShadow}" Translation="0,0,32" Height="80" Width="361" Margin="634,904,101,21">
             <Button Height="70" Width="361" Background="#967bb6" CornerRadius="8,8,8,8" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Grid>
-                    <Image HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="64" Source="/Assets/Icons/Dice/D20_Thin.ico" Margin="0,-4,0,0"/>
+                    <Image HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="64" Source="/Assets/Icons/Dice/D20_Thin.ico" Margin="0,-6,0,0"/>
                     <TextBlock Text="Select a game" Margin="75,5,0,0"></TextBlock>
                 </Grid>
             </Button>

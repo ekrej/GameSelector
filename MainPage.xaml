@@ -47,7 +47,7 @@
             <Button Height="72" Width="361" Background="#967bb6" CornerRadius="12,12,12,12" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Grid>
                     <Image HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="64" Source="/Assets/Icons/Dice/D20_Thin.ico" Margin="0,-4,0,0"/>
-                    <TextBlock Text="Select a game" Margin="75,5,0,0"></TextBlock>
+                    <TextBlock Text="Select a game" Margin="75,9,0,0" ></TextBlock>
                 </Grid>
             </Button>
         </Grid>

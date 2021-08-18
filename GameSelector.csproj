@@ -130,6 +130,16 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Icons\Add\add.ico" />
+    <Content Include="Assets\Icons\Add\plus2.ico" />
+    <Content Include="Assets\Icons\Add\plus.ico" />
+    <Content Include="Assets\Icons\Delete\delete.ico" />
+    <Content Include="Assets\Icons\Delete\multiply.ico" />
+    <Content Include="Assets\Icons\Dice\D20.ico" />
+    <Content Include="Assets\Icons\Dice\D20_Filled.ico" />
+    <Content Include="Assets\Icons\Dice\D20_Thin.ico" />
+    <Content Include="Assets\Icons\Dice\D6.ico" />
+    <Content Include="Assets\Icons\Dice\D8.ico" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -154,6 +164,7 @@
       <Version>6.2.12</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

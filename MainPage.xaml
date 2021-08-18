@@ -6,37 +6,48 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderBrush="#00000000" Width="1096">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderBrush="#00000000" Width="1096" Loaded="Page_Loaded">
 
-    <Grid RequestedTheme="Light" Background="#FF3E3B3B" BorderBrush="#FFD1D1D1" FocusVisualSecondaryBrush="#99FFFFFF" FocusVisualPrimaryBrush="White" Width="1096">
-        
+    <Grid x:Name="RootGrid"  RequestedTheme="Light" Background="#FF3E3B3B" BorderBrush="#FFD1D1D1" FocusVisualSecondaryBrush="#99FFFFFF" 
+          FocusVisualPrimaryBrush="White" Width="1096">
+        <!-- Resources -->
+        <Grid.Resources>
+            <ThemeShadow x:Name="GridShadow" />
+        </Grid.Resources>
+
+        <Grid x:Name="BackgroundGrid" />
+
         <!-- Games list -->
         <ListBox Width="500" HorizontalAlignment="Left" Margin="32,32,0,128" CornerRadius="8,8,8,8" Opacity="0.75">
             <ListBoxItem>
-                <TextBox Text="Game" FontSize="24" Width="476" TextAlignment="Center" HorizontalAlignment="Center" Background="Transparent" SelectionHighlightColor="#FF3F3F3F" BorderBrush="#00000000" />
-            </ListBoxItem>
-            <ListBoxItem>
-                <TextBox Text="Game" FontSize="24" Width="476" TextAlignment="Center" HorizontalAlignment="Center" BorderBrush="#00000000" Background="Transparent" />
-            </ListBoxItem>
-            <ListBoxItem>
-                <TextBox Text="Game" FontSize="24" Width="476" TextAlignment="Center" HorizontalAlignment="Center" Background="Transparent" BorderBrush="#00000000" />
-            </ListBoxItem>
-            <ListBoxItem>
-                <TextBox Text="Game" FontSize="24" Width="476" TextAlignment="Center" HorizontalAlignment="Center" Background="Transparent" />
+                <TextBox Text="Game" FontSize="24" Width="476" TextAlignment="Center" HorizontalAlignment="Center" Background="Transparent" 
+                         SelectionHighlightColor="#FF3F3F3F" BorderBrush="#00000000" CornerRadius="8,8,8,8"/>
             </ListBoxItem>
         </ListBox>
 
-        <Button Margin="32,904,0,0" VerticalAlignment="Top" Height="64" Width="200" Background="#FF0FB24A" CornerRadius="8,8,8,8">
-            <Image Height="64" Width="64" Source="/Assets/StoreLogo.png"/>
-        </Button>
-        <Button  Margin="332,904,0,0" VerticalAlignment="Top" Height="64" Width="200" Background="#FFD10000" CornerRadius="8,8,8,8">
-            <Image Height="64" Width="64" Source="/Assets/StoreLogo.png"/>
-        </Button>
+        <!-- Add -->
+        <Grid x:Name="AddButtonGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Width="100" Height="80" Margin="282,904,714,21">
+            <Button VerticalAlignment="Top" Height="70" Width="100" Background="#FF967BB6" CornerRadius="8,8,8,8" HorizontalAlignment="Center">
+                <Image Height="70" Width="64" Source="/Assets/Icons/Add/add.ico" Margin="0,-3,0,0" />
+            </Button>
+        </Grid>
+        <!-- Delete -->
+        <Grid x:Name="DeleteButtonGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Width="100" Height="80" Margin="432,904,564,21">
+            <Button VerticalAlignment="Top" Height="70" Width="100" Background="#FF967BB6" CornerRadius="8,8,8,8" HorizontalAlignment="Center">
+                <Image Height="64" Width="64" Source="/Assets/Icons/Delete/delete.ico"/>
+            </Button>
+        </Grid>
 
         <!-- selector -->
-        <TextBox HorizontalAlignment="Left" Margin="565,0,0,0" Text="No game selected yet" TextWrapping="Wrap" VerticalAlignment="Center" Width="500" Height="61" FontSize="32" TextAlignment="Center" Background="#00A24DD3" BorderBrush="#00000000"/>
-
-        <Button Content="Select a game" Margin="0,0,101,32" VerticalAlignment="Bottom" RenderTransformOrigin="-0.601,0.496" Height="64" Width="361" Background="#967bb6" CornerRadius="8,8,8,8" HorizontalAlignment="Right" FontSize="32"/>
-
+        <TextBlock HorizontalAlignment="Left" Margin="565,0,0,0" Text="No game selected yet" TextWrapping="Wrap" VerticalAlignment="Center" 
+                   Width="500" Height="61" FontSize="32" TextAlignment="Center" RequestedTheme="Dark"/>
+        <Grid x:Name="SelectButtonGrid"  Shadow="{StaticResource GridShadow}" Translation="0,0,32" Height="80" Width="361" Margin="634,904,101,21">
+            <Button Height="70" Width="361" Background="#967bb6" CornerRadius="8,8,8,8" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Grid>
+                    <Image HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="64" Source="/Assets/Icons/Dice/D20_Thin.ico" Margin="0,-4,0,0"/>
+                    <TextBlock Text="Select a game" Margin="75,5,0,0"></TextBlock>
+                </Grid>
+            </Button>
+        </Grid>
     </Grid>
 </Page>

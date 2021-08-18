@@ -26,5 +26,10 @@ namespace GameSelector
         {
             this.InitializeComponent();
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            GridShadow.Receivers.Add(BackgroundGrid);
+        }
     }
 }

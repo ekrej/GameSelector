@@ -18,8 +18,8 @@
         <Grid x:Name="BackgroundGrid" />
 
         <!-- Games list -->
-        <Grid x:Name="ListBoxGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Margin="32,32,564,138" Width="500" Height="817">
-            <ListBox HorizontalAlignment="Center" CornerRadius="8,8,8,8" Opacity="0.75" Width="503">
+        <Grid x:Name="ListBoxGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Margin="32,32,564,138" Width="505" Height="817">
+            <ListBox HorizontalAlignment="Center" Opacity="0.75" Width="503" CornerRadius="8,8,8,8">
                 <ListBoxItem>
                     <TextBox Text="Game" FontSize="24" Width="476" TextAlignment="Center" HorizontalAlignment="Center" Background="Transparent" 
                              SelectionHighlightColor="#FF3F3F3F" BorderBrush="#00000000" CornerRadius="8,8,8,8"/>
@@ -29,13 +29,13 @@
 
         <!-- Add -->
         <Grid x:Name="AddButtonGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Width="100" Height="80" Margin="282,904,714,21">
-            <Button VerticalAlignment="Top" Height="70" Width="100" Background="#FF967BB6" CornerRadius="8,8,8,8" HorizontalAlignment="Center">
+            <Button VerticalAlignment="Top" Height="70" Width="100" Background="#FF967BB6" CornerRadius="12,12,12,12" HorizontalAlignment="Center">
                 <Image Height="70" Width="64" Source="/Assets/Icons/Add/add.ico" Margin="0,-3,0,0" />
             </Button>
         </Grid>
         <!-- Delete -->
         <Grid x:Name="DeleteButtonGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Width="100" Height="80" Margin="432,904,564,21">
-            <Button VerticalAlignment="Top" Height="70" Width="100" Background="#FF967BB6" CornerRadius="8,8,8,8" HorizontalAlignment="Center">
+            <Button VerticalAlignment="Top" Height="70" Width="100" Background="#FF967BB6" CornerRadius="12,12,12,12" HorizontalAlignment="Center">
                 <Image Height="64" Width="64" Source="/Assets/Icons/Delete/delete.ico"/>
             </Button>
         </Grid>
@@ -44,7 +44,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="565,0,0,0" Text="No game selected yet" TextWrapping="Wrap" VerticalAlignment="Center" 
                    Width="500" Height="61" FontSize="32" TextAlignment="Center" RequestedTheme="Dark"/>
         <Grid x:Name="SelectButtonGrid"  Shadow="{StaticResource GridShadow}" Translation="0,0,32" Height="80" Width="361" Margin="634,904,101,21">
-            <Button Height="70" Width="361" Background="#967bb6" CornerRadius="8,8,8,8" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Button Height="70" Width="361" Background="#967bb6" CornerRadius="12,12,12,12" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Grid>
                     <Image HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="64" Source="/Assets/Icons/Dice/D20_Thin.ico" Margin="0,-6,0,0"/>
                     <TextBlock Text="Select a game" Margin="75,5,0,0"></TextBlock>

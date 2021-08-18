@@ -45,18 +45,30 @@ namespace GameSelector
         }
 
         private void AddButtonClick(object sender, RoutedEventArgs e)
-        { 
-            Games.AddGame();
-        }
+            => Games.AddGame();
 
         private void DeleteButtonClick(object sender, RoutedEventArgs e)
         {
-            //ee
+            if(GamesListBox.SelectedItem != null)
+                Games.RemoveAt(GamesListBox.SelectedIndex);
+            else if (Games.Count > 0)
+                Games.Remove(Games.Last());
         }
 
         private void SelectButtonClick(object sender, RoutedEventArgs e)
         {
-            //ee
+            ExtractChangesFromGamesList();
+            //GameResult.Text = Selector.SelectGame(Games);
+        }
+
+        private void ExtractChangesFromGamesList()
+        {
+            // does not get value from textbox, only first value
+            foreach (var listItem in GamesListBox.Items)
+            {
+                var game = listItem as Game;
+                GameResult.Text = game.Title;
+            }
         }
     }
 }

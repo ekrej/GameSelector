@@ -8,10 +8,12 @@ namespace GameSelector.Models
 {
     public class Game
     {
+        public string ID { get; set; }
         public string Title { get; set; }
-
-        public Game(string title)
+        
+        public Game(int id, string title)
         {
+            ID = "Game" + id;
             Title = title;
         }
     }

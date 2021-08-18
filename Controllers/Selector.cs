@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameSelector.Models;
 
 namespace GameSelector.Controllers
 {
@@ -13,9 +14,9 @@ namespace GameSelector.Controllers
 
         }
 
-        public string SelectGame()
+        public string SelectGame(GamesCollection Games)
         {
-            return "";
+            return Games.First().Title;
         }
     }
 }

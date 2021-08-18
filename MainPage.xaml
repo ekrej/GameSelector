@@ -27,8 +27,8 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Padding="5,0,5,0"
-                                       Text="{Binding Title}" Width="470" CornerRadius="12,12,12,12" Height="36" FontSize="24" TextAlignment="Center" />
+                            <TextBox Padding="5,0,5,0" Text="{Binding Title}" Width="470" CornerRadius="12,12,12,12" Height="36" 
+                                     FontSize="24" TextAlignment="Center" AllowFocusWhenDisabled="True"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -50,7 +50,7 @@
 
         <!-- selector -->
         <TextBlock HorizontalAlignment="Left" Margin="565,0,0,0" Text="No game selected yet" TextWrapping="Wrap" VerticalAlignment="Center" 
-                   Width="500" Height="61" FontSize="32" TextAlignment="Center" RequestedTheme="Dark"/>
+                   Width="500" Height="61" FontSize="32" TextAlignment="Center" RequestedTheme="Dark" x:Name="GameResult"/>
         <Grid x:Name="SelectButtonGrid"  Shadow="{StaticResource GridShadow}" Translation="0,0,32" Height="80" Width="361" Margin="634,904,101,21">
             <Button Height="72" Width="361" Background="#967bb6" CornerRadius="12,12,12,12" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Top" Click="SelectButtonClick">
                 <Grid>

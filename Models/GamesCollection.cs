@@ -11,9 +11,9 @@ namespace GameSelector.Models
     {
         public GamesCollection()
         {
-            Add( new Game("Add a Game"));
+            Add( new Game(0, "Add a Game"));
         }
 
-        public void AddGame() => Add(new Game("New Game"));
+        public void AddGame() => Add(new Game(this.Count, "New Game"));
     }
 }

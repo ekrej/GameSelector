@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="using:GameSelector.Models"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderBrush="#00000000" Width="1096" Loaded="Page_Loaded">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderBrush="#00000000" Width="548" Height="500" Loaded="Page_Loaded">
 
     <Grid x:Name="RootGrid"  RequestedTheme="Light" Background="#FF3E3B3B" BorderBrush="#FFD1D1D1" FocusVisualSecondaryBrush="#99FFFFFF" 
           FocusVisualPrimaryBrush="White" Width="1096" >
@@ -21,39 +21,40 @@
         <Grid x:Name="BackgroundGrid" />
 
         <!-- Games list -->
-        <Grid x:Name="ListBoxGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Margin="32,32,564,138" Width="505" Height="817" Background="#BFD6D6D6">
-            <ListBox x:Name="GamesListBox" HorizontalAlignment="Center" VerticalAlignment="Top" Opacity="0.75" Width="503" CornerRadius="8,8,8,8"
+        <Grid x:Name="ListBoxGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Margin="10,10,828,82" Width="258" Height="408" Background="#BFD6D6D6">
+            <ListBox x:Name="GamesListBox" HorizontalAlignment="Center" VerticalAlignment="Top" Opacity="0.75" Width="258" CornerRadius="8,8,8,8"
                      ItemsSource="{x:Bind Games}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBox Padding="5,0,5,0" Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="470" CornerRadius="12,12,12,12" Height="36" 
-                                     FontSize="24" TextAlignment="Center" AllowFocusWhenDisabled="True"/>
+                        <TextBox Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="230" CornerRadius="12,12,12,12" 
+                                 Height="32" FontSize="18" TextAlignment="Center" AllowFocusWhenDisabled="True"/>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
 
         <!-- Add -->
-        <Grid x:Name="AddButtonGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Width="100" Height="80" Margin="282,904,714,21">
-            <Button VerticalAlignment="Top" Height="72" Width="100" Background="#FF967BB6" CornerRadius="12,12,12,12" HorizontalAlignment="Center" Click="AddButtonClick">
-                <Image Height="70" Width="64" Source="/Assets/Icons/Add/add.ico" Margin="0,-3,0,0" />
+        <Grid x:Name="AddButtonGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Width="50" Height="46" Margin="139,444,907,14">
+            <Button Height="40" Width="50" Background="#FF967BB6" CornerRadius="8,8,8,8" Click="AddButtonClick" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Image Height="32" Width="32" Source="/Assets/Icons/Add/add.ico" Margin="-1,-4,-1,-5" />
             </Button>
         </Grid>
         <!-- Delete -->
-        <Grid x:Name="DeleteButtonGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Width="100" Height="80" Margin="432,904,564,21">
-            <Button VerticalAlignment="Top" Height="72" Width="100" Background="#FF967BB6" CornerRadius="12,12,12,12" HorizontalAlignment="Center" Click="DeleteButtonClick">
-                <Image Height="64" Width="64" Source="/Assets/Icons/Delete/delete.ico" Margin="0,-2,0,0"/>
+        <Grid x:Name="DeleteButtonGrid" Shadow="{StaticResource GridShadow}" Translation="0,0,32" Width="50" Height="46" Margin="218,444,828,14">
+            <Button Height="40" Width="50" Background="#FF967BB6" CornerRadius="8,8,8,8" HorizontalAlignment="Center" Click="DeleteButtonClick" VerticalAlignment="Top">
+                <Image Height="32" Width="32" Source="/Assets/Icons/Delete/delete.ico" Margin="-1,-4,-1,-5"/>
             </Button>
         </Grid>
 
         <!-- selector -->
-        <TextBlock HorizontalAlignment="Left" Margin="565,0,0,0" Text="No game selected yet" TextWrapping="Wrap" VerticalAlignment="Center" 
-                   Width="500" Height="61" FontSize="32" TextAlignment="Center" RequestedTheme="Dark" x:Name="GameResult"/>
-        <Grid x:Name="SelectButtonGrid"  Shadow="{StaticResource GridShadow}" Translation="0,0,32" Height="80" Width="361" Margin="634,904,101,21">
-            <Button Height="72" Width="361" Background="#967bb6" CornerRadius="12,12,12,12" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Top" Click="SelectButtonClick">
+        <TextBlock HorizontalAlignment="Left" Margin="282,0,0,0" Text="No game selected yet" TextWrapping="Wrap" VerticalAlignment="Center" 
+                   Width="250" Height="31" FontSize="18" TextAlignment="Center" RequestedTheme="Dark" x:Name="GameResult"/>
+
+        <Grid x:Name="SelectButtonGrid"  Shadow="{StaticResource GridShadow}" Translation="0,0,32" Height="50" Width="181" Margin="317,440,598,10">
+            <Button Height="40" Width="181" Background="#967bb6" CornerRadius="8,8,8,8" FontSize="16" HorizontalAlignment="Center" Click="SelectButtonClick" Margin="0,2,0,0" VerticalAlignment="Top">
                 <Grid>
-                    <Image HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="64" Source="/Assets/Icons/Dice/D20_Thin.ico" Margin="0,-4,0,0"/>
-                    <TextBlock Text="Select a game" Margin="75,9,0,0" ></TextBlock>
+                    <Image HorizontalAlignment="Left" Height="27" VerticalAlignment="Center" Width="27" Source="/Assets/Icons/Dice/D20_Thin.ico" Margin="-4,0,0,0"/>
+                    <TextBlock Text="Select a game" Margin="35,0,0,3" ></TextBlock>
                 </Grid>
             </Button>
         </Grid>

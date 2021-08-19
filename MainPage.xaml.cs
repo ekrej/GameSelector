@@ -26,7 +26,7 @@ namespace GameSelector
         {
             this.InitializeComponent();
 
-            ApplicationView.PreferredLaunchViewSize = new Size(1096, 1000);
+            ApplicationView.PreferredLaunchViewSize = new Size(548, 500);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
             selector = new Selector();

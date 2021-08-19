@@ -14,9 +14,10 @@ namespace GameSelector.Controllers
 
         }
 
-        public string SelectGame(GamesCollection Games)
+        public string SelectGame(GamesCollection games)
         {
-            return Games.First().Title;
+            Byte gamesByteLength = Convert.ToByte(games.Count);
+            return games[Dice.Roll(gamesByteLength)].Title;
         }
     }
 }

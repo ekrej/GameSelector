@@ -26,10 +26,8 @@
                      ItemsSource="{x:Bind Games}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Padding="5,0,5,0" Text="{Binding Title}" Width="470" CornerRadius="12,12,12,12" Height="36" 
+                        <TextBox Padding="5,0,5,0" Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="470" CornerRadius="12,12,12,12" Height="36" 
                                      FontSize="24" TextAlignment="Center" AllowFocusWhenDisabled="True"/>
-                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

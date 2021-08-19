@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
+﻿using GameSelector.Models;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows;
 using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using GameSelector.Models;
 using Selector = GameSelector.Controllers.Selector;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -28,6 +18,8 @@ namespace GameSelector
     {
         private Selector Selector { get; set; }
         public GamesCollection Games = new GamesCollection();
+
+
 
         public MainPage()
         {
@@ -46,10 +38,11 @@ namespace GameSelector
 
         private void AddButtonClick(object sender, RoutedEventArgs e)
             => Games.AddGame();
+        
 
         private void DeleteButtonClick(object sender, RoutedEventArgs e)
         {
-            if(GamesListBox.SelectedItem != null)
+            if (GamesListBox.SelectedItem != null)
                 Games.RemoveAt(GamesListBox.SelectedIndex);
             else if (Games.Count > 0)
                 Games.Remove(Games.Last());
@@ -63,12 +56,7 @@ namespace GameSelector
 
         private void ExtractChangesFromGamesList()
         {
-            // does not get value from textbox, only first value
-            foreach (var listItem in GamesListBox.Items)
-            {
-                var game = listItem as Game;
-                GameResult.Text = game.Title;
-            }
+            GameResult.Text = (GamesListBox.Items.First() as Game).Title;
         }
     }
 }

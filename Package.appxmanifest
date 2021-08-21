@@ -8,8 +8,8 @@
 
   <Identity
     Name="79f2cc69-f4f1-4ed3-b8db-5356a33d9bbd"
-    Publisher="CN=Jerke"
-    Version="1.0.0.0" />
+    Publisher="CN=Jerke Godeke"
+    Version="1.1.2.0" />
 
   <mp:PhoneIdentity PhoneProductId="79f2cc69-f4f1-4ed3-b8db-5356a33d9bbd" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -35,15 +35,11 @@
         DisplayName="GameSelector"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="GameSelector"
+        Description="Game Selector"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
     </Application>
   </Applications>
-
-  <Capabilities>
-    <Capability Name="internetClient" />
-  </Capabilities>
 </Package>

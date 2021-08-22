@@ -1,0 +1,110 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GameSelector.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="548" d:DesignHeight="500"
+        Width="548" Height="500"
+        x:Class="GameSelector.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="GameSelector"
+
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Panel>
+        <!-- Background -->
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    TintColor="Gray"
+                    TintOpacity=".5"
+                    MaterialOpacity="0.01" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+
+        <!-- Games List -->
+        <ListBox x:Name="GamesListBox" HorizontalAlignment="Center" VerticalAlignment="Top"
+                 Margin="19,16,280,95" Height="408" Width="258"
+                 Background="#BFD6D6D6">
+            <ListBox.ItemTemplate>
+                <DataTemplate />
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <!-- Add Button -->
+        <Button Height="40" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top"
+                Margin="163,444,907,14">
+            
+            <!-- styling -->
+            <Button.Styles>
+                <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="CornerRadius" Value="8" />
+                </Style>
+            </Button.Styles>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF876ea3" Offset="1" />
+                    <GradientStop Color="#FFa088bd" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+            
+            <Image Height="32" Width="32" Source="/Assets/Add/add.ico" Margin="-1,-4,-1,-5"> </Image>
+            
+        </Button>
+        
+        <Button Height="40" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top"
+                Margin="248,444,828,14">
+            
+            <!-- styling -->
+            <Button.Styles>
+                <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="CornerRadius" Value="8" />
+                </Style>
+            </Button.Styles>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF876ea3" Offset="1" />
+                    <GradientStop Color="#FFa088bd" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+            
+            <Image Height="32" Width="32" Source="/Assets/Delete/delete.ico" Margin="-1,-4,-1,-5"></Image>
+            
+        </Button>
+
+        <!-- Game Text -->
+        <TextBlock HorizontalAlignment="Left" Margin="282,0,0,0" Text="No game selected yet" TextWrapping="Wrap"
+                   VerticalAlignment="Center"
+                   Width="250" Height="31" FontSize="18" TextAlignment="Center" x:Name="GameResult" />
+
+        <!-- Select Button -->
+        <Button Height="40" Width="181" FontSize="16" HorizontalAlignment="Left" 
+                VerticalAlignment="Top" Margin="317,444,598,10">
+            
+            <!-- styling -->
+            <Button.Styles>
+                <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="CornerRadius" Value="8" />
+                </Style>
+            </Button.Styles>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF876ea3" Offset="1" />
+                    <GradientStop Color="#FFa088bd" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+
+            <Grid>
+                <TextBlock Text="Select a game" Margin="35,0,0,3" />
+            </Grid>
+        </Button>
+    </Panel>
+
+</Window>

@@ -35,11 +35,13 @@
                  Margin="19,16,280,95" Height="408" Width="258"
                  Background="#BFD6D6D6">
             <ListBox.ItemTemplate>
-                <DataTemplate />
+                <DataTemplate>
+                    <TextBox></TextBox>
+                </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <!-- Add Button -->
-        <Button Height="40" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top"
+        <Button Height="40" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top"
                 Margin="163,444,907,14">
             
             <!-- styling -->
@@ -49,9 +51,11 @@
                 </Style>
             </Button.Styles>
             <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF876ea3" Offset="1" />
-                    <GradientStop Color="#FFa088bd" Offset="0" />
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Offset="0" Color="#b5a2cb"/>
+                        <GradientStop Offset="1" Color="#967bb6"/>
+                    </LinearGradientBrush.GradientStops>
                 </LinearGradientBrush>
             </Button.Background>
             
@@ -59,7 +63,7 @@
             
         </Button>
         
-        <Button Height="40" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top"
+        <Button Height="40" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top"
                 Margin="248,444,828,14">
             
             <!-- styling -->
@@ -69,9 +73,11 @@
                 </Style>
             </Button.Styles>
             <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF876ea3" Offset="1" />
-                    <GradientStop Color="#FFa088bd" Offset="0" />
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Offset="0" Color="#a088bd"/>
+                        <GradientStop Offset="1" Color="#876ea3"/>
+                    </LinearGradientBrush.GradientStops>
                 </LinearGradientBrush>
             </Button.Background>
             
@@ -95,14 +101,18 @@
                 </Style>
             </Button.Styles>
             <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF876ea3" Offset="1" />
-                    <GradientStop Color="#FFa088bd" Offset="0" />
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Offset="0" Color="#967bb6"/>
+                        <GradientStop Offset="1" Color="#69567f"/>
+                    </LinearGradientBrush.GradientStops>
                 </LinearGradientBrush>
             </Button.Background>
 
             <Grid>
-                <TextBlock Text="Select a game" Margin="35,0,0,3" />
+                <Image HorizontalAlignment="Left" Height="27" VerticalAlignment="Center" Width="27" 
+                       Source="/Assets/Dice/D20_Thin.ico" Margin="0,0,0,0"/>
+                <TextBlock Text="Select a game" Margin="35,4,0,-5" />
             </Grid>
         </Button>
     </Panel>

@@ -8,7 +8,7 @@ namespace GameSelector.Views
 {
     public partial class MainWindow : Window
     {
-        public List<Game> Games = new List<Game>();
+        
         
         public MainWindow()
         {

@@ -3,6 +3,8 @@
         xmlns:vm="using:GameSelector.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:generic="clr-namespace:System.Collections.Generic;assembly=System.Collections"
+        xmlns:models="clr-namespace:GameSelector.Models"
         mc:Ignorable="d"
         d:DesignWidth="548" d:DesignHeight="500"
         Width="548" Height="500"
@@ -32,11 +34,10 @@
 
         <!-- Games List -->
         <ListBox x:Name="GamesListBox" HorizontalAlignment="Center" VerticalAlignment="Top"
-                 Margin="19,16,280,95" Height="408" Width="258"
-                 Background="#BFD6D6D6">
+                 Margin="19,16,280,95" Height="408" Width="258" Background="#BFD6D6D6">
             <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBox></TextBox>
+                <DataTemplate DataType="{x:Type models:Game}">
+                    <TextBox Text="{Binding Title}"></TextBox>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

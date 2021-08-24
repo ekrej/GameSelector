@@ -14,7 +14,7 @@ namespace GameSelector.Controllers
 
         }
 
-        public string SelectGame(List<Game> games)
+        public string SelectGame(GamesCollection games)
         {
             Byte gamesByteLength = Convert.ToByte(games.Count);
             return games[Dice.Roll(gamesByteLength)].Title;

@@ -33,18 +33,19 @@
         </ExperimentalAcrylicBorder>
 
         <!-- Games List -->
-        <ListBox x:Name="GamesListBox" HorizontalAlignment="Center" VerticalAlignment="Top"
-                 Margin="19,16,280,95" Height="408" Width="258" Background="#BFD6D6D6">
+        <ListBox Name="GamesListBox" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="19,16,280,95"
+                 Height="408" Width="258" Background="#BFD6D6D6" Items="{Binding Games}"
+                 SelectionMode="Single,Toggle" SelectedIndex="{Binding SelectedIndex}">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="{x:Type models:Game}">
-                    <TextBox Text="{Binding Title}"></TextBox>
+                    <TextBox Text="{Binding Title}" Width="226" Margin="16,0,16,0"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <!-- Add Button -->
         <Button Height="40" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top"
-                Margin="163,444,907,14">
-            
+                Margin="163,444,907,14" x:Name="AddButton" Click="AddButton_OnClick">
+
             <!-- styling -->
             <Button.Styles>
                 <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
@@ -54,19 +55,20 @@
             <Button.Background>
                 <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
                     <LinearGradientBrush.GradientStops>
-                        <GradientStop Offset="0" Color="#b5a2cb"/>
-                        <GradientStop Offset="1" Color="#967bb6"/>
+                        <GradientStop Offset="0" Color="#b5a2cb" />
+                        <GradientStop Offset="1" Color="#967bb6" />
                     </LinearGradientBrush.GradientStops>
                 </LinearGradientBrush>
             </Button.Background>
-            
-            <Image Height="32" Width="32" Source="/Assets/Add/add.ico" Margin="-1,-4,-1,-5"> </Image>
+
+            <Image Height="32" Width="32" Source="/Assets/Add/add.ico" Margin="-1,-4,-1,-5" />
             
         </Button>
         
+        <!-- Delete Button -->
         <Button Height="40" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top"
-                Margin="248,444,828,14">
-            
+                Margin="248,444,828,14" x:Name="DeleteButton" Click="DeleteButton_OnClick">
+
             <!-- styling -->
             <Button.Styles>
                 <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
@@ -76,14 +78,14 @@
             <Button.Background>
                 <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
                     <LinearGradientBrush.GradientStops>
-                        <GradientStop Offset="0" Color="#a088bd"/>
-                        <GradientStop Offset="1" Color="#876ea3"/>
+                        <GradientStop Offset="0" Color="#a088bd" />
+                        <GradientStop Offset="1" Color="#876ea3" />
                     </LinearGradientBrush.GradientStops>
                 </LinearGradientBrush>
             </Button.Background>
-            
-            <Image Height="32" Width="32" Source="/Assets/Delete/delete.ico" Margin="-1,-4,-1,-5"></Image>
-            
+
+            <Image Height="32" Width="32" Source="/Assets/Delete/delete.ico" Margin="-1,-4,-1,-5" />
+
         </Button>
 
         <!-- Game Text -->
@@ -92,9 +94,9 @@
                    Width="250" Height="31" FontSize="18" TextAlignment="Center" x:Name="GameResult" />
 
         <!-- Select Button -->
-        <Button Height="40" Width="181" FontSize="16" HorizontalAlignment="Left" 
-                VerticalAlignment="Top" Margin="317,444,598,10">
-            
+        <Button Height="40" Width="181" FontSize="16" HorizontalAlignment="Left"
+                VerticalAlignment="Top" Margin="317,444,598,10" x:Name="SelectButton" Click="SelectButton_OnClick">
+
             <!-- styling -->
             <Button.Styles>
                 <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
@@ -104,15 +106,15 @@
             <Button.Background>
                 <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
                     <LinearGradientBrush.GradientStops>
-                        <GradientStop Offset="0" Color="#967bb6"/>
-                        <GradientStop Offset="1" Color="#69567f"/>
+                        <GradientStop Offset="0" Color="#967bb6" />
+                        <GradientStop Offset="1" Color="#69567f" />
                     </LinearGradientBrush.GradientStops>
                 </LinearGradientBrush>
             </Button.Background>
 
             <Grid>
-                <Image HorizontalAlignment="Left" Height="27" VerticalAlignment="Center" Width="27" 
-                       Source="/Assets/Dice/D20_Thin.ico" Margin="0,0,0,0"/>
+                <Image HorizontalAlignment="Left" Height="27" VerticalAlignment="Center" Width="27"
+                       Source="/Assets/Dice/D20_Thin.ico" Margin="0,0,0,0" />
                 <TextBlock Text="Select a game" Margin="35,4,0,-5" />
             </Grid>
         </Button>

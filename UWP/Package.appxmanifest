@@ -9,7 +9,7 @@
   <Identity
     Name="79f2cc69-f4f1-4ed3-b8db-5356a33d9bbd"
     Publisher="CN=Jerke Godeke"
-    Version="1.1.2.0" />
+    Version="1.1.3.0" />
 
   <mp:PhoneIdentity PhoneProductId="79f2cc69-f4f1-4ed3-b8db-5356a33d9bbd" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

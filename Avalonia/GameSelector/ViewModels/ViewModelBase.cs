@@ -8,7 +8,8 @@ namespace GameSelector.ViewModels
 {
     public class ViewModelBase : ReactiveObject
     {
-        int selectedIndex;
+        private int selectedIndex;
+        private Game selectedItem;
 
         public int SelectedIndex
         {
@@ -16,13 +17,10 @@ namespace GameSelector.ViewModels
             set => this.RaiseAndSetIfChanged(ref selectedIndex, value);
         }
         
-       Game selectedItem;
-
         public Game SelectedItem
         {
             get => selectedItem;
             set => this.RaiseAndSetIfChanged(ref selectedItem, value);
         }
-    }
     }
 }

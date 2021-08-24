@@ -20,6 +20,13 @@
         <vm:MainWindowViewModel />
     </Design.DataContext>
 
+    <Window.Styles>
+        <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="CornerRadius" Value="8" />
+        </Style>
+
+    </Window.Styles>
+
     <Panel>
         <!-- Background -->
         <ExperimentalAcrylicBorder IsHitTestVisible="False">
@@ -33,48 +40,64 @@
         </ExperimentalAcrylicBorder>
 
         <!-- Games List -->
-        <ListBox Name="GamesListBox" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="19,16,280,95"
-                 Height="408" Width="258" Background="#BFD6D6D6" Items="{Binding Games}"
-                 SelectionMode="Single,Toggle" SelectedIndex="{Binding SelectedIndex}">
-            <ListBox.ItemTemplate>
-                <DataTemplate DataType="{x:Type models:Game}">
-                    <TextBox Text="{Binding Title}" Width="226" Margin="16,0,16,0"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <Border CornerRadius="8"
+                BorderBrush="#BFD6D6D6"
+                Margin="19,16,280,95"
+                ClipToBounds="True">
+            <ListBox Name="GamesListBox" 
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Top"
+                     Height="408" Width="258" Background="#BFD6D6D6" 
+                     Items="{Binding Games}"
+                     SelectionMode="Single,Toggle" 
+                     SelectedIndex="{Binding SelectedIndex}"
+                     SelectedItem="{Binding SelectedItem}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type models:Game}">
+                        <Border CornerRadius="8" 
+                                Width="224" Height="28" 
+                                Margin="8,0,8,0" 
+                                BorderBrush="#D6D6D6" 
+                                ClipToBounds="True" 
+                                BorderThickness="1" >
+                            <TextBox Text="{Binding Title}" 
+                                     Width="228" Height="20"
+                                     TextAlignment="Center" 
+                                     BorderThickness="0" 
+                                     Background="#252525"/>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
         <!-- Add Button -->
-        <Button Height="40" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top"
-                Margin="163,444,907,14" x:Name="AddButton" Click="AddButton_OnClick">
+        <Button Height="40" Width="60" 
+                HorizontalAlignment="Center" VerticalAlignment="Top"
+                Margin="163,444,907,14" 
+                x:Name="AddButton" 
+                Click="AddButton_OnClick">
 
-            <!-- styling -->
-            <Button.Styles>
-                <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
-                    <Setter Property="CornerRadius" Value="8" />
-                </Style>
-            </Button.Styles>
             <Button.Background>
                 <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
                     <LinearGradientBrush.GradientStops>
-                        <GradientStop Offset="0" Color="#b5a2cb" />
-                        <GradientStop Offset="1" Color="#967bb6" />
+                        <GradientStop Offset="0" Color="#a088bd" />
+                        <GradientStop Offset="1" Color="#876ea3" />
                     </LinearGradientBrush.GradientStops>
                 </LinearGradientBrush>
             </Button.Background>
 
             <Image Height="32" Width="32" Source="/Assets/Add/add.ico" Margin="-1,-4,-1,-5" />
-            
+
         </Button>
-        
+
         <!-- Delete Button -->
-        <Button Height="40" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top"
-                Margin="248,444,828,14" x:Name="DeleteButton" Click="DeleteButton_OnClick">
+        <Button Height="40" Width="60"
+                HorizontalAlignment="Center" VerticalAlignment="Top"
+                Margin="248,444,828,14"
+                x:Name="DeleteButton" 
+                Click="DeleteButton_OnClick">
 
             <!-- styling -->
-            <Button.Styles>
-                <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
-                    <Setter Property="CornerRadius" Value="8" />
-                </Style>
-            </Button.Styles>
             <Button.Background>
                 <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
                     <LinearGradientBrush.GradientStops>
@@ -89,20 +112,24 @@
         </Button>
 
         <!-- Game Text -->
-        <TextBlock HorizontalAlignment="Left" Margin="282,0,0,0" Text="No game selected yet" TextWrapping="Wrap"
-                   VerticalAlignment="Center"
-                   Width="250" Height="31" FontSize="18" TextAlignment="Center" x:Name="GameResult" />
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+                   Margin="282,0,0,0" 
+                   Text="No game selected yet" 
+                   TextWrapping="Wrap"
+                   Width="250" Height="31" 
+                   FontSize="18" 
+                   TextAlignment="Center" 
+                   Name="GameResult" />
 
         <!-- Select Button -->
-        <Button Height="40" Width="181" FontSize="16" HorizontalAlignment="Left"
-                VerticalAlignment="Top" Margin="317,444,598,10" x:Name="SelectButton" Click="SelectButton_OnClick">
+        <Button Height="40" Width="181" 
+                FontSize="16" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Margin="317,444,598,10" 
+                x:Name="SelectButton" 
+                Click="SelectButton_OnClick">
 
             <!-- styling -->
-            <Button.Styles>
-                <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
-                    <Setter Property="CornerRadius" Value="8" />
-                </Style>
-            </Button.Styles>
             <Button.Background>
                 <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
                     <LinearGradientBrush.GradientStops>

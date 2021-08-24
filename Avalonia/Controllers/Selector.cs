@@ -16,8 +16,13 @@ namespace GameSelector.Controllers
 
         public string SelectGame(GamesCollection games)
         {
-            Byte gamesByteLength = Convert.ToByte(games.Count);
-            return games[Dice.Roll(gamesByteLength)].Title;
+            if (games.Count > 0)
+            {
+                Byte gamesByteLength = Convert.ToByte(games.Count);
+                return games[Dice.Roll(Convert.ToByte(games.Count))].Title;
+            }
+            
+            return "No games found";
         }
     }
 }

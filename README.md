@@ -3,5 +3,8 @@ Its a simple application that allows you t o fill in a list of items an choose a
 
 the frameworks teste are:
 
- - UWP
- -Avalonia
+ - UWP 
+ - Avalonia
+
+
+All Icons Used are fram https://icons8.com

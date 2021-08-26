@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:GameSelector"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <ResourceDictionary>
+             <ResourceDictionary.MergedDictionaries>
+                 <ResourceDictionary Source="Theming/TextBoxTheme.xaml"></ResourceDictionary>
+             </ResourceDictionary.MergedDictionaries>
+         </ResourceDictionary>
     </Application.Resources>
 </Application>

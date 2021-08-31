@@ -51,7 +51,7 @@
 
                 <Button Style="{DynamicResource MinimizeButton}"
                         x:Name="MinimizeButton" 
-                        Width="30"
+                        Width="40"
                         Background="Transparent"
                         Foreground="White"
                         FontWeight="Bold"
@@ -61,7 +61,7 @@
 
                 <Button Style="{DynamicResource CloseButton}" 
                         x:Name="CloseButton" 
-                        Width="30"
+                        Width="40"
                         Background="Transparent"
                         Foreground="White"
                         FontWeight="Bold"
@@ -95,6 +95,10 @@
                         </LinearGradientBrush>
                     </Button.Background>
 
+                    <Image Source="Assets/Add/plus.png" 
+                           Height="43" 
+                           Width="43" />
+
                 </Button>
                 <!-- Delete Button -->
                 <Button Style="{DynamicResource ModernButton}" 
@@ -108,7 +112,6 @@
                             <GradientStop Color="#FFE52131" Offset="1"/>
                         </LinearGradientBrush>
                     </Button.Background>
-
                 </Button>
             </StackPanel>
 

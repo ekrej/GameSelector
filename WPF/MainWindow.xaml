@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameSelector"
+        xmlns:viewModel="clr-namespace:GameSelector.ViewModel"
         mc:Ignorable="d"
         Title="Game Selector" 
         Width="550" Height="500"
@@ -12,9 +13,10 @@
         Background="Transparent"
         AllowsTransparency="True"
         ResizeMode="CanMinimize">
-    <Window.Resources>
-        <ResourceDictionary Source="/Theming/ModernButton.xaml"></ResourceDictionary>
-    </Window.Resources>
+
+    <Window.DataContext>
+        <viewModel:MainViewModel></viewModel:MainViewModel>
+    </Window.DataContext>
 
     <Border Background="#36393f" CornerRadius="8,8,8,8">
         <Grid>
@@ -45,6 +47,7 @@
                        HorizontalAlignment="Left"
                        Foreground="#CECECE" FontSize="15" Margin="20,0,0,0"/>
 
+            <!-- Window Controls -->
             <StackPanel HorizontalAlignment="Right" 
                         Orientation="Horizontal"
                         Grid.Column="2">
@@ -71,11 +74,19 @@
 
             </StackPanel>
 
-
-
-
             <!-- Games List -->
-            <ListBox Grid.Row="1" Grid.ColumnSpan="2" Margin="10,10,10,10">
+            <ListBox Style="{DynamicResource ListBoxStyle1}" x:Name="GamesListBox"
+                     Grid.Row="1" 
+                     Grid.ColumnSpan="2" 
+                     Margin="10,10,10,10"
+                     ItemTemplate="{StaticResource GamesList}"
+                     ItemsSource="{Binding Games}">
+                <ListBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFB6B6B6" Offset="1"/>
+                        <GradientStop Color="White" Offset="0"/>
+                    </LinearGradientBrush>
+                </ListBox.Background>
 
             </ListBox>
 
@@ -85,9 +96,9 @@
                 <!-- Add Button -->
                 <Button Style="{DynamicResource ModernButton}"
                         x:Name="AddButton" 
-                        Width="50" 
-                        Height="50" 
-                        Margin="145,0,15,0">
+                        Width="45" 
+                        Height="45" 
+                        Margin="145,0,15,0" Click="AddButton_Click">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
                             <GradientStop Color="#FF20AB63"/>
@@ -96,46 +107,34 @@
                     </Button.Background>
 
                     <Image Source="Assets/Add/plus.png" 
-                           Height="43" 
-                           Width="43" />
+                           Height="32" 
+                           Width="32" />
 
                 </Button>
                 <!-- Delete Button -->
                 <Button Style="{DynamicResource ModernButton}" 
                         x:Name="DeleteButton" 
-                        Width="50" 
-                        Height="50" 
-                        Margin="0,0,15,0">
+                        Width="45" 
+                        Height="45" 
+                        Margin="0,0,15,0" Click="DeleteButton_Click">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
                             <GradientStop Color="#FFF34B56"/>
                             <GradientStop Color="#FFE52131" Offset="1"/>
                         </LinearGradientBrush>
                     </Button.Background>
+
+                    <Image Source="Assets/Delete/multiply.png" 
+                           Height="32" 
+                           Width="32" />
+
                 </Button>
+
             </StackPanel>
 
-            <!-- Select Button -->
-            <Button Style="{DynamicResource ModernButton}"  
-                    x:Name="SelectButton" 
-                    Grid.Column="2" 
-                    Grid.Row="2" 
-                    HorizontalAlignment="Center"  
-                    VerticalAlignment="Center" 
-                    Height="50" 
-                    Width="181">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
-                        <GradientStop Color="#FF33AAEA"/>
-                        <GradientStop Color="#FF1974D3" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-                <Grid>
-                    <TextBlock Foreground="White"
-                               FontSize="16">Select a game</TextBlock>
-                </Grid>
-            </Button>
-            <TextBlock Grid.Column="2" 
+            <!-- Game text -->
+            <TextBlock x:Name="SelectedGame"
+                       Grid.Column="2" 
                        Grid.Row="1"
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Center"
@@ -144,6 +143,38 @@
                        TextWrapping="Wrap" 
                        FontSize="22" 
                        Foreground="White"/>
+
+            <!-- Select Button -->
+            <Button Style="{DynamicResource ModernButton}"  
+                    x:Name="SelectButton" 
+                    Grid.Column="2" 
+                    Grid.Row="2" 
+                    HorizontalAlignment="Center"  
+                    VerticalAlignment="Center" 
+                    Height="45" 
+                    Width="180" 
+                    Click="SelectButton_Click">
+
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                        <GradientStop Color="#FF33AAEA"/>
+                        <GradientStop Color="#FF1974D3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Grid>
+                    <Image Source="Assets/Dice/D20_Thin_64.png"
+                           Height="32" 
+                           Width="32" Margin="1,0,0,0" />
+
+                    <TextBlock Text="Select         Game"
+                               Foreground="White"
+                               FontSize="18" 
+                               FontWeight="DemiBold"
+                               Margin="0,0,0,0"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
 
 
         </Grid>

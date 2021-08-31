@@ -7,24 +7,30 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Model\" />
+      <None Remove="Assets\Add\plus.png" />
+      <None Remove="Assets\Delete\multiply.png" />
+      <None Remove="Assets\Dice\D20_Thin.ico" />
+      <None Remove="Assets\Dice\D20_Thin_64.png" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Folder Include="ViewModel\" />
       <Folder Include="View\" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="Assets\Add\plus.png">
+      <Content Include="Assets\Add\plus.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Assets\Delete\multiply.png">
+      </Content>
+      <Content Include="Assets\Delete\multiply.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Assets\Dice\D20_Thin.ico">
+      </Content>
+      <Content Include="Assets\Dice\D20_Thin.ico">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Assets\Dice\D20_Thin_64.png">
+      </Content>
+      <Content Include="Assets\Dice\D20_Thin_64.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
+      </Content>
     </ItemGroup>
 
 </Project>

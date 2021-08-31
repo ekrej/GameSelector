@@ -7,18 +7,20 @@
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border CornerRadius="8,8,8,8"
                             Background="#3E3B3B"
-                            Width="200"
+                            Width="240"
                             Height="40">
                         <Grid>
                             <Rectangle StrokeThickness="1"/>
                             <TextBox Margin="1" 
+                                     Width="240"
                                      Text="{TemplateBinding Text}"
                                      Background="Transparent"
                                      BorderThickness="0"
                                      VerticalContentAlignment="Center"
                                      HorizontalAlignment="Center"
                                      Padding="5"
-                                     Foreground="#CFCFCF"/>
+                                     Foreground="#e2e2e2"
+                                     FontSize="14"/>
                         </Grid>
                     </Border>
                 </ControlTemplate>

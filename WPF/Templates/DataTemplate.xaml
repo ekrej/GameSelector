@@ -3,12 +3,24 @@
                     xmlns:models="clr-namespace:GameSelector.Models">
 
     <DataTemplate x:Key="GamesList" DataType="{x:Type models:Game}">
-        <TextBox Style="{DynamicResource ModernTextBox}"
-                 Text="{Binding Path=Title}" 
+        <TextBox Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 Width="200"
+                 Background="#3E3B3B"
                  TextAlignment="Center" 
-                 BorderThickness="0" 
-                 Background="#252525"/>
+                 BorderThickness="1"
+                 VerticalContentAlignment="Center"
+                 HorizontalAlignment="Center"
+                 Padding="5"
+                 Foreground="White"
+                 FontSize="14"
+                 Margin="22,0,20,0">
 
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="8"/>
+                    <Setter Property="Background" Value="#3E3B3B"></Setter>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
     </DataTemplate>
-
 </ResourceDictionary>

@@ -87,7 +87,6 @@
                         <GradientStop Color="White" Offset="0"/>
                     </LinearGradientBrush>
                 </ListBox.Background>
-
             </ListBox>
 
             <!-- List Buttons -->

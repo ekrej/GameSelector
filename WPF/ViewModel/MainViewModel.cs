@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using GameSelector.Controllers;
 using GameSelector.Models;
 
 namespace GameSelector.ViewModel
@@ -7,10 +8,12 @@ namespace GameSelector.ViewModel
     public class MainViewModel: ObservableObject
     {
         public GamesCollection Games { get; set; }
+        private Selector _gameSelector { get; set; }
 
         public MainViewModel()
         {
             Games = new GamesCollection();
+            _gameSelector = new Selector();
         }
 
         public void AddNewGame() =>Games.AddGame();
@@ -20,7 +23,7 @@ namespace GameSelector.ViewModel
 
         public string SelectGame()
         {
-            return Games.Last().Title;
+            return _gameSelector.SelectGame(Games);
         }
     }
 }

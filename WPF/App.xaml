@@ -1,0 +1,23 @@
+﻿<Application x:Class="GameSelector.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GameSelector"
+             xmlns:viewModel="clr-namespace:GameSelector.ViewModel"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <ResourceDictionary>
+             <ResourceDictionary.MergedDictionaries>
+                 <ResourceDictionary Source="Theming/TextBoxTheme.xaml"></ResourceDictionary>
+                 <ResourceDictionary Source="/Theming/HeaderButtons.xaml" />
+                 <ResourceDictionary Source="/Theming/ModernButton.xaml" />
+                 <ResourceDictionary Source="/Templates/DataTemplate.xaml" />
+                 <ResourceDictionary Source="/Theming/ModernListBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:MainViewModel}">
+
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <UseWPF>true</UseWPF>
+        <Platforms>AnyCPU;x64</Platforms>
+        <ApplicationIcon>D20_Thin.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\Add\plus.png" />
+      <None Remove="Assets\Delete\multiply.png" />
+      <None Remove="Assets\Dice\D20_Thin.ico" />
+      <None Remove="Assets\Dice\D20_Thin_64.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ViewModel\" />
+      <Folder Include="View\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Assets\Add\plus.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Assets\Delete\multiply.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Assets\Dice\D20_Thin.ico">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Assets\Dice\D20_Thin_64.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+</Project>

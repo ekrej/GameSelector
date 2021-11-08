@@ -22,8 +22,17 @@ namespace GameSelector.ViewModels
 
         public void AddGame() => Games.AddGame();
 
-        public void RemoveGame(int row) => Games.Remove(Games[row]);
-        public void RemoveGame() => Games.Remove(Games.Last());
+        public void RemoveGame(int row)
+        {
+            if (Games.Count > 0)
+                Games.Remove(Games[row]);
+        }
+
+        public void RemoveGame()
+        {
+            if (Games.Count > 0)
+                Games.Remove(Games.Last());
+        }
 
         public string SelectGame() => this.Selector.SelectGame(Games);
         
